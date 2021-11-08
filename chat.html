@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Group Video Chat</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+    <style>
+        body {
+            width: 1280px;
+            height: 720px;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: 280px 720px 280px;
+            grid-template-rows: 100px 620px;
+            gap: 0px 0px; 
+            grid-template-areas:
+            "app-logo top-bar right-bar"
+            "left-bar chat right-bar";
+        }
+
+        .left-bar { 
+            grid-area: left-bar;
+            width: 280px;
+            height: 620px;
+            position: relative;
+            left: 0;
+            background-color: lightblue;
+        }
+
+        .left-bar a {
+            padding: 12px;
+            font-size: 30px;
+            display: block;
+            text-align: center;
+        }
+
+        #profile-button{
+            display: inline-block;
+            text-align: center;
+            margin-left: 65px;
+        }
+
+        #settings-button{
+            display: inline-block;
+            text-align: center;
+            margin-left: 70px;
+        }
+
+        .left-bar bottom{
+            position: absolute;
+            bottom: 0px;
+            display: inline-block;
+        }
+
+        .top-bar {
+            grid-area: top-bar;
+            margin-bottom: 50px;
+            font-size: 20px;
+            border: 2px solid black;
+        }
+
+        #camera-button {
+            display: inline-block;
+            text-align: center;
+            margin-left: 600px;
+        }
+
+        #phone-button {
+            display: inline-block;
+            text-align: center;
+        }
+
+        #group-name {
+            text-align: left;
+            justify-content: center;
+        }
+
+        .app-logo { 
+            grid-area: app-logo;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .chat {
+            grid-area: chat;
+            background-color: rgb(128, 71, 71);
+        }
+
+        .right-bar {
+            grid-area: right-bar;
+            width: 280px;
+            height: 720px;
+            position: relative;
+            right: 0;
+            background-color: lightblue;
+        }
+
+    </style>
+    <body>
+        <div class="container">
+            <div class="left-bar">
+                <a href="feed.html">Debates</a>
+                <a href="grupos.html">Grupos</a>
+                <a href="#">Amigos</a>
+                <bottom>
+                    <button id="profile-button" class="fa fa-user" style="font-size:35px"></button>
+                    <button id="settings-button" class="material-icons" style="font-size:35px">settings</button>
+                <bottom>
+            </div>
+            <div class="top-bar">
+                <div id="group-name">Nome Grupo</div>
+                <button id="camera-button" class="fa fa-camera" style="font-size:24px"></button>
+                <button id="phone-button" class="glyphicon glyphicon-earphone"></button>
+            </div>
+            <div class="app-logo">
+                <span style='font-size:120px; align-self: center;'>&#9675;</span>
+            </div>
+            <div class="chat">
+            </div>
+            <div class="right-bar">
+
+            </div>
+        </div>
+    </body>
+</html>
