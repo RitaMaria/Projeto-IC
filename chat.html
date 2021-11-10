@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>Group Video Chat</title>
+        <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -9,6 +10,8 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css">
+        <link rel="stylesheet" href="Chat/style.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </head>
@@ -96,58 +99,6 @@
             align-items: center;
         }
 
-        .chat {
-            grid-area: chat;
-            position: relative;
-        }
-
-        .chat_box_received {
-            border: 2px solid #dedede;
-            background-color: #f1f1f1;
-            border-radius: 5px;
-            padding: 10px;
-            margin: 10px 0;
-            width: 720px;
-            height: 50px;
-            text-align: left;
-        }
-
-        .chat_box_sent {
-            border-color: #ccc;
-            background-color: #ddd;
-            border-radius: 5px;
-            padding: 10px;
-            margin: 10px 0;
-            width: 720px;
-            height: 50px;
-            text-align: right;
-        }
-
-        .chat bottom {
-            position: absolute;
-            bottom: 0px;
-            background-color: blue;
-            display: grid; 
-            grid-template-columns: 600px 60px; 
-            gap: 0px 0px; 
-            width: 720px; 
-            height: 50px;
-            grid-template-areas:
-            "write send file";
-        }
-
-        .chat bottom write{
-            grid-area: write;
-        }
-
-        .chat bottom file {
-            grid-area: file;
-        }
-
-        .chat bottom send {
-            grid-area: send
-        }
-
         .right-bar {
             grid-area: right-bar;
             width: 280px;
@@ -211,46 +162,6 @@
             <div class="app-logo">
                 <span style='font-size:120px; align-self: center;'>&#9675;</span>
             </div>
-            <div class="chat">
-                <div class="chat_box_received">
-                    <p>Hello. How are you today?</p>
-                </div>
-                  
-                <div class="chat_box_sent">
-                    <p>Hey! I'm fine. Thanks for asking!</p>
-                </div>
-                  
-                <div class="chat_box_received">
-                    <p>Sweet! So, what do you wanna do today?</p>
-                </div>
-                  
-                <div class="chat_box_sent">
-                    <p>Nah, I dunno. Play soccer.. or learn more coding perhaps?</p>
-                </div>
-                
-                <bottom>
-                    <write>
-                        <input type="text" id="my_msg" style="width: 580px; margin-top: 10px; margin-left: 10px">
-                    </write>
-                    <send>
-                        <button type="button" onclick="myFunction()" style="margin-left: 10px; margin-top: 5px; "><i class="material-icons">send</i></button>
-                    </send>
-                    <script>
-                        function myFunction() {
-                            var x = document.getElementById("my_msg").value;
-                            document.getElementById("demo").innerHTML = x;
-                        }
-                    </script>
-                    <file>
-                        <button type="button" style="margin-top: 5px;"><i class="material-icons">attach_file</i></button>
-                    </file>                    
-                </bottom>
-
-                <div class="chat_box_sent">
-                    <p id="demo"></p>
-                </div>
-
-            </div>
 
             <div class="right-bar">
                 <ul>
@@ -263,6 +174,29 @@
                     Opções
                 </bottom>
             </div>
+
+            <section>
+                <div class="chat">
+
+                    <div class="chat-area">
+        
+                        <div class="mensagem-exemplo">
+                            <img src="Chat/imagens/user-icon.png" class="avatar" alt="user-icon">
+                            <span class="msg">Hey how are you?</span>
+                        </div>
+                    </div>
+                    <div class="input-area">
+                        <input style="width: 580px; bottom: 10px;" type="text" id="input-box">
+                        <button class="submit"> <i class="material-icons"> send</button>
+                        <button class="submit" style="margin-left: 10px;"><i class="material-icons">attach_file</i></button>
+                    </div>
+                </div>
+
+                <script src="Chat/main.js"></script>
+
+            </section>
+
+
         </div>
     </body>
 </html>
