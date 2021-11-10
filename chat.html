@@ -7,6 +7,8 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </head>
@@ -16,13 +18,16 @@
             height: 720px;
         }
         .container {
-            display: grid;
-            grid-template-columns: 280px 720px 280px;
-            grid-template-rows: 100px 620px;
+            display: grid; 
+            grid-template-columns: 280px 720px 280px; 
+            grid-template-rows: 50px 50px 620px; 
             gap: 0px 0px; 
-            grid-template-areas:
-            "app-logo top-bar right-bar"
-            "left-bar chat right-bar";
+            grid-template-areas: 
+                "app-logo top-bar right-bar"
+                "app-logo chat right-bar"
+                "left-bar chat right-bar"; 
+            width: 1280px; 
+            height: 720px; 
         }
 
         .left-bar { 
@@ -61,23 +66,25 @@
 
         .top-bar {
             grid-area: top-bar;
-            margin-bottom: 50px;
             font-size: 20px;
             border: 2px solid black;
+            display: grid; 
+            grid-template-columns: 250px; 
+            gap: 0px 0px; 
+            width: 720px; 
+            height: 50px;
+            grid-template-areas:
+            "group-name buttons";
+            padding-top: 8px;
         }
 
-        #camera-button {
+        .buttons {
             display: inline-block;
-            text-align: center;
-            margin-left: 600px;
+            text-align: right;
+            padding-right: 10px;
         }
 
-        #phone-button {
-            display: inline-block;
-            text-align: center;
-        }
-
-        #group-name {
+        .group-name {
             text-align: left;
             justify-content: center;
         }
@@ -91,7 +98,54 @@
 
         .chat {
             grid-area: chat;
-            background-color: rgb(128, 71, 71);
+            position: relative;
+        }
+
+        .chat_box_received {
+            border: 2px solid #dedede;
+            background-color: #f1f1f1;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px 0;
+            width: 720px;
+            height: 50px;
+            text-align: left;
+        }
+
+        .chat_box_sent {
+            border-color: #ccc;
+            background-color: #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px 0;
+            width: 720px;
+            height: 50px;
+            text-align: right;
+        }
+
+        .chat bottom {
+            position: absolute;
+            bottom: 0px;
+            background-color: blue;
+            display: grid; 
+            grid-template-columns: 600px 60px; 
+            gap: 0px 0px; 
+            width: 720px; 
+            height: 50px;
+            grid-template-areas:
+            "write send file";
+        }
+
+        .chat bottom write{
+            grid-area: write;
+        }
+
+        .chat bottom file {
+            grid-area: file;
+        }
+
+        .chat bottom send {
+            grid-area: send
         }
 
         .right-bar {
@@ -102,6 +156,38 @@
             right: 0;
             background-color: lightblue;
         }
+
+        .right-bar ul li {
+            display: block;
+            padding: 12px;
+            margin-right: 30px;
+            color: black;
+            position: relative;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        #participantestop {
+            font-weight: bold;
+            font-size: 25px;
+        }
+
+        #participantesbottom {
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .right-bar bottom {
+            position: absolute;
+            width: 280px;
+            height: 50px;
+            bottom: 0px;
+            font-size: 25px;
+            display: block;
+            text-align: center;
+        }
+
+
 
     </style>
     <body>
@@ -116,17 +202,66 @@
                 <bottom>
             </div>
             <div class="top-bar">
-                <div id="group-name">Nome Grupo</div>
-                <button id="camera-button" class="fa fa-camera" style="font-size:24px"></button>
-                <button id="phone-button" class="glyphicon glyphicon-earphone"></button>
+                <div class="group-name">Nome Grupo</div>
+                <div class="buttons">
+                    <button id="camera-button" class="fa fa-camera" style="font-size:24px"></button>
+                    <button id="phone-button" class="glyphicon glyphicon-earphone"></button>                    
+                </div>
             </div>
             <div class="app-logo">
                 <span style='font-size:120px; align-self: center;'>&#9675;</span>
             </div>
             <div class="chat">
-            </div>
-            <div class="right-bar">
+                <div class="chat_box_received">
+                    <p>Hello. How are you today?</p>
+                </div>
+                  
+                <div class="chat_box_sent">
+                    <p>Hey! I'm fine. Thanks for asking!</p>
+                </div>
+                  
+                <div class="chat_box_received">
+                    <p>Sweet! So, what do you wanna do today?</p>
+                </div>
+                  
+                <div class="chat_box_sent">
+                    <p>Nah, I dunno. Play soccer.. or learn more coding perhaps?</p>
+                </div>
+                
+                <bottom>
+                    <write>
+                        <input type="text" id="my_msg" style="width: 580px; margin-top: 10px; margin-left: 10px">
+                    </write>
+                    <send>
+                        <button type="button" onclick="myFunction()" style="margin-left: 10px; margin-top: 5px; "><i class="material-icons">send</i></button>
+                    </send>
+                    <script>
+                        function myFunction() {
+                            var x = document.getElementById("my_msg").value;
+                            document.getElementById("demo").innerHTML = x;
+                        }
+                    </script>
+                    <file>
+                        <button type="button" style="margin-top: 5px;"><i class="material-icons">attach_file</i></button>
+                    </file>                    
+                </bottom>
 
+                <div class="chat_box_sent">
+                    <p id="demo"></p>
+                </div>
+
+            </div>
+
+            <div class="right-bar">
+                <ul>
+                    <li id="participantestop">Participantes</li>
+                    <li>Participante 1</li>
+                    <li>Participante 2</li>
+                    <li id="participantesbottom">Adicionar amigo <i class="fa fa-plus"></i> </li>
+                </ul>
+                <bottom>
+                    Opções
+                </bottom>
             </div>
         </div>
     </body>
