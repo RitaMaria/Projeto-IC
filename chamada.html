@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Group Video Chat</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+    <style>
+        body {
+            width: 1280px;
+            height: 720px;
+        }
+
+        .container {
+            display: grid; 
+            grid-template-columns: 280px 720px 280px; 
+            grid-template-rows: 50px 50px 285px 285px 50px; 
+            gap: 0px 0px; 
+            grid-template-areas: 
+                "app-logo top-bar participantes"
+                "app-logo video-area participantes"
+                "left-bar video-area participantes"
+                "left-bar video-area lista-espera"
+                "left-bar-bottom video-bottom right-bar-bottom"; 
+            width: 1280px; 
+            height: 720px; 
+        }
+
+        .app-logo { 
+            grid-area: app-logo;
+            display: flex;
+            font-family: 'Courier New', Courier, monospace ;
+            justify-content: center;
+            align-items: center;        
+        }
+
+        .top-bar { 
+            grid-area: top-bar;
+            font-size: 20px;
+            border: 2px solid black; 
+            padding-top: 8px;
+        }
+
+        .left-bar { 
+            grid-area: left-bar; 
+            width: 280px;
+            height: 570px;
+            position: relative;
+            left: 0;
+            background-color: lightblue;            
+        }
+
+        .left-bar a {
+            padding: 12px;
+            font-size: 30px;
+            display: block;
+            text-align: center;
+        }
+
+        .left-bar-bottom { 
+            grid-area: left-bar-bottom;
+            display: inline-block;   
+            background-color: aqua;         
+        }
+
+        #profile-button{
+            display: inline-block;
+            text-align: center;
+            margin-left: 65px;
+        }
+
+        #settings-button{
+            display: inline-block;
+            text-align: center;
+            margin-left: 70px;
+        }
+
+        .video-area { 
+            display: grid; 
+            grid-template-columns: 360px 360px; 
+            grid-template-rows: 205px 205px 205px; 
+            gap: 0px 0px;
+            grid-area: video-area;
+            grid-auto-flow: row;
+            overflow-y: scroll;
+            grid-auto-columns: 360px;
+            grid-auto-rows: 205px;
+        }
+
+        .video {
+            display: flex;
+            width: 360px;
+            height: 205px;
+            justify-content: center;
+            align-items: center;
+            border: 5px solid #87b5ff;
+            border-radius: 3px;
+            font-size: 2em;
+            font-family: sans-serif;
+            font-weight: bold;
+            background-color: #295eb3;
+        }
+
+        .video-bottom { grid-area: video-bottom; }
+
+        .participantes {
+            grid-area: participantes;
+        }
+
+        .participantes ul li { 
+            display: block;
+            padding: 12px;
+            margin-right: 30px;
+            color: black;
+            position: relative;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        #participantestop {
+            font-weight: bold;
+            font-size: 25px;
+        }
+
+        #participantesbottom {
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .lista-espera { 
+            grid-area: lista-espera; 
+        }
+
+        .lista-espera ul li { 
+            display: block;
+            padding: 12px;
+            margin-right: 30px;
+            color: black;
+            position: relative;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        #lista-espera-top {
+            font-weight: bold;
+            font-size: 25px;
+        }
+
+        #lista-espera-bottom {
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .right-bar-bottom { 
+            grid-area: right-bar-bottom; 
+            font-size: 25px;
+            display: block;
+            text-align: center;
+        }
+
+    </style>
+
+    <body>
+        <div class="container">
+            <div class="left-bar">
+                <a href="feed.html">Debates</a>
+                <a href="grupos.html">Grupos</a>
+                <a href="#">Amigos</a>
+            </div>
+
+            <div class="left-bar-bottom">
+                <button id="profile-button" class="fa fa-user" style="font-size:35px"></button>
+                <button id="settings-button" class="material-icons" style="font-size:35px">settings</button>
+            </div>
+
+            <div class="top-bar"> Nome Grupo</div>
+
+            <div class="app-logo">
+                <span style='font-size:120px; align-self: center;'>&#9675;</span>
+            </div>
+
+            <div class="video-area">
+                <div class="video">Teste 1</div>
+                <video class="video" controls><source src="video_test.mp4" type="video/mp4"></video>
+                <div class="video">Teste 3</div>
+                <div class="video">Teste 4</div>
+                <video class="video" controls><source src="video_test.mp4" type="video/mp4"></video>
+                <div class="video">Teste 6</div>
+                <div class="video">Teste 7</div>
+            </div>
+
+            <div class="video-bottom">
+                <button style="font-size:24px; display: inline-block; text-align: left;"><i class="fa fa-microphone"></i></button>
+                <button id="camera-button" class="fa fa-camera" style="font-size:24px; display: inline-block; text-align: left;"></button>
+                <button style="font-size:24px; display: inline-block; margin-left: 595px;"><i class="material-icons">fullscreen_exit</i></button>
+            </div>
+
+            <div class="participantes">
+                <ul>
+                    <li id="participantestop">Participantes</li>
+                    <li>Participante 1</li>
+                    <li>Participante 2</li>
+                    <li id="participantesbottom">Adicionar amigo <i class="fa fa-plus"></i></li>
+                </ul>
+            </div>
+
+            <div class="lista-espera">
+                <ul>
+                    <li id="lista-espera-top">Lista de espera</li>
+                    <li>Participante 1</li>
+                    <li>Participante 2</li>
+                    <li id="lista-espera-bottom">Participar<i class="fa fa-hand-paper-o"></i></li>
+                </ul>
+            </div>
+
+            <div class="right-bar-bottom">Opções</div>
+        </div>
+    </body>
+</html>
