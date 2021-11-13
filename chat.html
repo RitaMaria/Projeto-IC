@@ -138,6 +138,14 @@
             text-align: center;
         }
 
+        #attach_file {
+            position:absolute;
+            top:50%;
+            left:50%;
+            background-color: burlywood;
+            display:none;
+        }
+
 
 
     </style>
@@ -146,7 +154,7 @@
             <div class="left-bar">
                 <a href="feed.html">Debates</a>
                 <a href="grupos.html">Grupos</a>
-                <a href="#">Amigos</a>
+                <a href="amigos.html">Amigos</a>
                 <bottom>
                     <button id="profile-button" class="fa fa-user" style="font-size:35px"></button>
                     <button id="settings-button" class="material-icons" style="font-size:35px">settings</button>
@@ -155,7 +163,7 @@
             <div class="top-bar">
                 <div class="group-name">Nome Grupo</div>
                 <div class="buttons">
-                    <button id="camera-button" class="fa fa-camera" style="font-size:24px"></button>
+                    <button id="camera-button" class="fa fa-camera" style="font-size:24px" onclick="iniciar_chamada()"></button>
                     <button id="phone-button" class="glyphicon glyphicon-earphone"></button>                    
                 </div>
             </div>
@@ -185,18 +193,25 @@
                             <span class="msg">Hey how are you?</span>
                         </div>
                     </div>
+
                     <div class="input-area">
                         <input style="width: 580px; bottom: 10px;" type="text" id="input-box">
                         <button class="submit"> <i class="material-icons"> send</button>
-                        <button class="submit" style="margin-left: 10px;"><i class="material-icons">attach_file</i></button>
+                        <button class="submit" style="margin-left: 10px;" onclick="open_attach_file()"><i class="material-icons">attach_file</i></button>
+
+                    </div>
+
+                    <div id="attach_file">
+                        <h1>Selecionar ficheiro</h1>
+                        <i class="material-icons" onclick="sendpdf()">attach_file</i>
+                        <i class="material-icons" onclick="sendpdf()">attach_file</i>
+                        <i class="material-icons" onclick="sendpdf()">attach_file</i>
                     </div>
                 </div>
 
                 <script src="Chat/main.js"></script>
 
             </section>
-
-
         </div>
     </body>
 </html>

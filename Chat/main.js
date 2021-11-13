@@ -16,3 +16,23 @@ submitButton.addEventListener('click', ()=>{
 
 })
 
+function open_attach_file() {
+    document.getElementById("attach_file").style.display = "block";
+}
+
+
+function sendpdf() {
+    let p = `<div class="out-msg">
+    <span class="my-msg"><a href="guiao.pdf">Pdf teste</a></span>
+    <img src="Chat/imagens/user-icon.png" class="avatar">
+    </div>`;
+
+    chatArea.insertAdjacentHTML("beforeend", p);
+
+    document.getElementById("attach_file").style.display = "none";
+
+}
+
+function iniciar_chamada() {
+    location.href="chamada.html";
+}

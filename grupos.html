@@ -93,13 +93,43 @@
             background-color: #295eb3;
         }
 
+        .form_popup {
+            display:none;
+            position:absolute;
+            width: 50%;
+            height: 50%;
+            background-color: rgb(132, 146, 141);
+        }
+
+        .form_container {
+            width:80%;
+            margin: 15% auto; /* 15% from the top and centered */
+            padding: 20px;
+        }
+
+        .form_container .btn {
+            color:green;
+        }
+
+        .form_container .cancel {
+            color:red;
+        }
+
+        .form-container input[type=text], .form-container input[type=password] {
+            width: 100%;
+            padding: 15px;
+            margin: 5px 0 22px 0;
+            border: none;
+            background: #f1f1f1;
+        }
+
     </style>
     <body>
         <div class="container">
             <div class="side-bar">
                 <a href="feed.html">Debates</a>
                 <a href="grupos.html">Grupos</a>
-                <a href="#">Amigos</a>
+                <a href="amigos.html">Amigos</a>
                 <bottom>
                     <button id="profile-button" class="fa fa-user" style="font-size:35px"></button>
                     <button id="settings-button" class="material-icons" style="font-size:35px">settings</button>
@@ -112,17 +142,38 @@
                 <span style='font-size:120px; align-self: center;'>&#9675;</span>
             </div>
             <div class="group">
-                <div class="section">Criar grupo</div>
-                <div class="section">Grupo 1</div>
-                <div class="section">Grupo 2</div>
-                <div class="section">Grupo 3</div>
-                <div class="section">Grupo 4</div>
-                <div class="section">Grupo 5</div>
-                <div class="section">Grupo 6</div>
-                <div class="section">Grupo 7</div>
-                <div class="section">Grupo 8</div>
-                <div class="section">Grupo 9</div>
-                <div class="section">Grupo 10</div>
+                <button class="section" onclick = "openForm_g()">Criar grupo</button>
+
+                <div class="form_popup" id="form_criar_grupo">
+                    <form class="form_container">
+                        <label id="Nome"><b>Nome</b></label>
+                        <input type="text">
+                        <label id="Categoria"><b>Categoria</b></label>
+                        <input type="text">
+                        <label id="Amigos"><b>Adicionar amigos:</b></label>
+                        <input list="amigos_list">
+                        <datalist id="amigos_list">
+                        </datalist> <br>
+                        <label id="Email"><b>Adicionar e-mail</b></label>
+                        <input type="text"> <br>
+                        <button class="btn">Criar Grupo</button>
+                        <button class="btn cancel" onclick="closeForm_g()">Cancelar</button>
+                    </form>
+                </div>
+
+                <script>
+                    function openForm_g() {
+                        document.getElementById("form_criar_grupo").style.display = "block";
+                    }
+                    function closeForm_g() {
+                        document.getElementById("form_criar_grupo").style.display = "none";
+                    }
+                </script>
+
+                <script src="grupos.js"></script>
+
+                <button class="section" onclick="iniciar_chat()">Debates-123</div>
+
             </div>
         </div>
     </body>
