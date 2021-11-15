@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+    <head>
+        <title>Chamada</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="main.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <div class="container_chamada">
+            <div class="left_bar_c">
+                <a href="feed.html">Debates</a>
+                <a href="grupos.html">Grupos</a>
+                <a href="amigos.html">Amigos</a>
+            </div>
+
+            <div class="left_bar_c_bottom">
+                <btn id="profile-button" class="fa fa-user"></btn>
+                <btn id="settings-button" class="fa fa-cog"></btn>
+            </div>
+
+            <div class="top_bar_c">Debates-123</div>
+
+            <div class="app_logo">
+                Let's talk!
+            </div>
+
+            <div class="video-area">
+                <div class="video-call-wrapper_c">
+                    <div class="video-participant_c">
+                        <div class="participant-actions">
+                            <btn class="fa fa-microphone-slash"></btn>
+                            <btn class="fa fa-camera"></btn>
+                        </div>
+                        <a class="name-tag">Andy Will</a>
+                        <img class="img_f" src="https://images.unsplash.com/photo-1566821582776-92b13ab46bb4?ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60" alt="participant">
+                    </div>
+                    <div class="video-participant_c">
+                        <div class="participant-actions">
+                            <btn class="fa fa-microphone-slash"></btn>
+                            <btn class="fa fa-camera"></btn>
+                        </div>
+                        <a class="name-tag">Emmy Lou</a>
+                        <img class="img_f" src="https://images.unsplash.com/photo-1500917293891-ef795e70e1f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80" alt="participant">
+                    </div>
+                    <div class="video-participant_c">
+                        <div class="participant-actions">
+                            <btn class="fa fa-microphone-slash"></btn>
+                            <btn class="fa fa-camera"></btn>
+                        </div>
+                        <a class="name-tag">Tim Russel</a>
+                        <img class="img_f" src="https://images.unsplash.com/photo-1576110397661-64a019d88a98?ixlib=rb-1.2.1&auto=format&fit=crop&w=1234&q=80" alt="participant">
+                    </div>
+                    <div class="video-participant_c">
+                        <div class="participant-actions">
+                            <btn class="fa fa-microphone-slash"></btn>
+                            <btn class="fa fa-camera"></btn>
+                        </div>
+                        <a class="name-tag">Jessica Bell</a>
+                        <img class="img_f" src="https://images.unsplash.com/photo-1600207438283-a5de6d9df13e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1234&q=80" alt="participant">
+                    </div>
+                    <div class="video-participant_c">
+                        <div class="participant-actions">
+                            <btn class="fa fa-microphone-slash"></btn>
+                            <btn class="fa fa-camera"></btn>
+                        </div>
+                       <a class="name-tag">Ryan Patrick</a>
+                       <img class="img_f" src="https://images.unsplash.com/photo-1581824283135-0666cf353f35?ixlib=rb-1.2.1&auto=format&fit=crop&w=1276&q=80" alt="participant">
+                    </div>
+                    <div class="video-participant_c">
+                        <div class="participant-actions">
+                            <btn class="fa fa-microphone-slash"></btn>
+                            <btn class="fa fa-camera"></btn>
+                        </div>
+                       <a class="name-tag">Tina Cate</a>
+                       <img class="img_f" src="https://images.unsplash.com/photo-1542596594-649edbc13630?ixlib=rb-1.2.1&auto=format&fit=crop&w=1234&q=80" alt="participant">
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-bottom">
+                <btn style="display: inline-block; text-align: left;" class="fa fa-microphone"></btn>
+                <btn style="display: inline-block; text-align: left;" class="fa fa-video-camera" ></btn>
+                <btn style="display: inline-block; margin-left: 550px" class="fa fa-comment" onclick="iniciar_chat()"></btn>
+            </div>
+
+            <div class="participantes">
+                <ul>
+                    <li id="participantestop">Participantes</li>
+                    <li><i class="fa fa-user"></i> Andy Will</li>
+                    <li><i class="fa fa-user"></i> Emmy Lou</li>
+                    <li><i class="fa fa-user"></i> Tim Russel</li>
+                    <li><i class="fa fa-user"></i> Jessica Bell</li>
+                    <li><i class="fa fa-user"></i> Ryan Patrick</li>
+                    <li><i class="fa fa-user"></i> Tina Cate</li>
+                    <li id="participantesbottom">Adicionar amigo <i class="fa fa-plus"></i></li>
+                </ul>
+            </div>
+
+            <div class="lista-espera">
+                <ul>
+                    <li id="lista-espera-top">Lista de espera</li>
+                    <li><i class="fa fa-user"></i> Tina Cate</li>
+                    <li><i class="fa fa-user"></i> Emmy Lou</li>
+                    <li id="lista-espera-bottom">Participar <i class="fa fa-hand-paper-o"></i></li>
+                </ul>
+            </div>
+            <div class="right_bar_bottom">Opções</div>            
+        </div>
+        <script src="main.js"></script>
+    </body>
+</html>
