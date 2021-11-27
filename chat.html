@@ -3,16 +3,16 @@
     <head>
         <title>Chat</title>
         <meta charset="utf-8">
-        <link rel="stylesheet" href="Css/chat.css">
+        <link rel="stylesheet" href="./Style/chat.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body>
         <div class="container_chat">
             <div class="left_bar_chat">
-                <a href="feed.html">Debates</a>
+                <a href="index.html">Debates</a>
                 <a href="grupos.html">Grupos</a>
-                <a href="amigos.html">Amigos</a>
+                <a href="contactos.html">Contactos</a>
                 <bottom>
                     <btn id="profile-button" class="fa fa-user"></btn>
                     <btn id="settings-button" class="fa fa-cog"></btn>
@@ -26,7 +26,7 @@
                 </div>
             </div>
             <div class="app_logo">
-                Let's talk!
+                <b>Let's talk!</b>
             </div>
             <div class="right_bar_chat">
                 <ul>
@@ -57,13 +57,13 @@
                         <h1>Selecionar ficheiro</h1>
                         <i id ="close_btn" class="fa fa-close" onclick="close_attach_file_popup()"></i>
                         <i id="file_img" class="fa fa-file-word-o"><p id="file_text">missfortune.docx</p></i>
-                        <i id="file_img" class="fa fa-file-pdf-o" onclick="sendpdf()"> <p id="file_text">ranking@13Set2021.pdf</p></i>
+                        <i id="file_img" class="fa fa-file-pdf-o" onclick="sendpdf()"> <p id="file_text">apontamentos@13Set2021.pdf</p></i>
                         <i id="file_img" class="fa fa-file-excel-o"> <p id="file_text">arcane.xlsx</p></i> <br>
                     </div>
                 </div>
             </section>
         </div>
-        <script src="Javascript/chat.js"></script>
-        <script src="Javascript/main.js"></script>
+        <script src="./Script/chat.js"></script>
+        <script src="./Script/main.js"></script>
     </body>
 </html>

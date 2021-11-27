@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+    <head>
+        <title>Contactos</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="./Style/main.css">
+        <link rel="stylesheet" href="./Style/contactos.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <div class="container_g">
+            <div class="side_bar_g">
+                <a href="index.html">Debates</a>
+                <a href="grupos.html">Grupos</a>
+                <a href="contactos.html">Contactos</a>
+                <bottom>
+                    <btn id="profile-button" class="fa fa-user"></btn>
+                    <btn id="settings-button" class="fa fa-cog"></btn>
+                </bottom>
+            </div>
+            <div class="top_bar_g">
+                <h1>Contactos</h1>
+            </div>
+            <div class="app_logo">
+                <b>Let's talk!</b>
+            </div>
+            <div class="group" id="displayContacts">
+                <i id="group_img" class="fa fa-plus-circle" onclick="open_adicionar_contacto_popup()"><p id="group_text">Adicionar contacto</p></i>
+                <i id="group_img" class="fa fa-user"><p id="group_text">Contacto teste</p></i>
+            </div>
+            <div id="add_contact_container">
+                <form>
+                    <h1 style="text-align: center;">Adicionar Contacto</h1>
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome" name="nome" placeholder="Nome">
+                    <label for="telemovel">Telemóvel</label>
+                    <input type="text" id="telemovel" name="telemovel" placeholder="987654321">
+                    <label for="email">E-mail</label>
+                    <input type="text" id="email" name="email" placeholder="teste@gmail.com">
+                    <input type="submit" value="Adicionar" onclick="addNewContact()">
+                    <input type="submit" value="Cancelar" style="background-color: red;">
+                </form>
+            </div>
+        </div>
+        <script src="./Script/main.js"></script>
+        <script src="./Script/contactos.js"></script>
+    </body>
+</html>

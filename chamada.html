@@ -3,16 +3,16 @@
     <head>
         <title>Chamada</title>
         <meta charset="utf-8">
-        <link rel="stylesheet" href="Css/main.css">
+        <link rel="stylesheet" href="./Style/main.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body>
         <div class="container_chamada">
             <div class="left_bar_c">
-                <a href="feed.html">Debates</a>
+                <a href="index.html">Debates</a>
                 <a href="grupos.html">Grupos</a>
-                <a href="amigos.html">Amigos</a>
+                <a href="contactos.html">Contactos</a>
             </div>
 
             <div class="left_bar_c_bottom">
@@ -20,10 +20,10 @@
                 <btn id="settings-button" class="fa fa-cog"></btn>
             </div>
 
-            <div class="top_bar_c">Debates-123</div>
+            <div class="top_bar_c" id="nome_grupo">Debates-123</div>
 
             <div class="app_logo">
-                Let's talk!
+                <b>Let's talk!</b>
             </div>
 
             <div class="video-area">
@@ -90,9 +90,9 @@
                     <li id="participantestop">Participantes</li>
                     <li><i class="fa fa-user"></i> Andy Will</li>
                     <li><i class="fa fa-user"></i> Emmy Lou</li>
-                    <li><i class="fa fa-user"></i> Tim Russel</li>
                     <li><i class="fa fa-user"></i> Jessica Bell</li>
                     <li><i class="fa fa-user"></i> Ryan Patrick</li>
+                    <li><i class="fa fa-user"></i> Tim Russel</li>
                     <li><i class="fa fa-user"></i> Tina Cate</li>
                     <li id="participantesbottom">Adicionar amigo <i class="fa fa-plus"></i></li>
                 </ul>
@@ -101,13 +101,38 @@
             <div class="lista-espera">
                 <ul>
                     <li id="lista-espera-top">Lista de espera</li>
-                    <li><i class="fa fa-user"></i> Tina Cate</li>
                     <li><i class="fa fa-user"></i> Emmy Lou</li>
+                    <li><i class="fa fa-user"></i> Tina Cate</li>
                     <li id="lista-espera-bottom">Participar <i class="fa fa-hand-paper-o"></i></li>
                 </ul>
             </div>
-            <div class="right_bar_bottom">Opções</div>            
+            <button class="right_bar_bottom">
+                Sair
+                <div class="dropup-content">
+                    <a href="#" onclick="open_rating_popup()">Avaliar debate</a>
+                    <a href="index.html">Sair</a>
+                </div>
+            </button>
+            <div id="rating_popup">
+                <h1>Avaliação do debate</h1>
+                <p>Avaliação do tópico
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                </p>
+                <p>Avaliação do anfitrião
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                </p>
+                <input type="submit" value="Terminar avaliação e sair da chamada" onclick="voltar_debates()">
+                <input type="submit" value="Cancelar" style="background-color: red;" onclick="close_rating_popup()">
+            </div>            
         </div>
-        <script src="Javascript/main.js"></script>
+        <script src="./Script/main.js"></script>
     </body>
 </html>
