@@ -6,10 +6,6 @@ function iniciar_chat() {
     location.href = "chat.html";
 }
 
-function iniciar_chamada() {
-    location.href = "chamada.html";
-}
-
 function open_rating_popup() {
     document.getElementById("rating_popup").style.display = "block";
 }

@@ -26,21 +26,20 @@
                 <b>Let's talk!</b>
             </div>
             <div class="group" id="displayContacts">
-                <i id="group_img" class="fa fa-plus-circle" onclick="open_adicionar_contacto_popup()"><p id="group_text">Adicionar contacto</p></i>
-                <i id="group_img" class="fa fa-user"><p id="group_text">Contacto teste</p></i>
+
             </div>
             <div id="add_contact_container">
-                <form>
+                <form name=add_contact>
                     <h1 style="text-align: center;">Adicionar Contacto</h1>
                     <label for="nome">Nome</label>
                     <input type="text" id="nome" name="nome" placeholder="Nome">
                     <label for="telemovel">Telemóvel</label>
-                    <input type="text" id="telemovel" name="telemovel" placeholder="987654321">
+                    <input type="tel" pattern="[0-9]{9}" id="telemovel" name="telemovel" placeholder="987654321">
                     <label for="email">E-mail</label>
-                    <input type="text" id="email" name="email" placeholder="teste@gmail.com">
-                    <input type="submit" value="Adicionar" onclick="addNewContact()">
-                    <input type="submit" value="Cancelar" style="background-color: red;">
+                    <input type="email" id="email" name="email" placeholder="teste@gmail.com">
                 </form>
+                    <input type="submit" value="Adicionar" onclick="addNewContact()">
+                    <input type="submit" value="Cancelar" style="background-color: red;" onclick="close_adicionar_contacto_popup()">
             </div>
         </div>
         <script src="./Script/main.js"></script>

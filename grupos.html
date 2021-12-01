@@ -4,6 +4,7 @@
         <title>Grupos</title>
         <meta charset="utf-8">
         <link rel="stylesheet" href="./Style/main.css">
+        <link rel="stylesheet" href="./Style/grupos.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
@@ -24,12 +25,28 @@
             <div class="app_logo">
                 <b>Let's talk!</b>
             </div>
-            <div class="group">
-                <i id="group_img" class="fa fa-plus-circle"><p id="group_text">Adicionar grupo</p></i>
-                <i id="group_img" class="fa fa-group" onclick="iniciar_chamada()"><p id="group_text">Debates-123</p></i>
-                <i id="group_img" class="fa fa-group" onclick="iniciar_chamada_crimes()"><p id="group_text">Crimes</p></i>
+            <div class="group" id="displaygrupos">
+
+            </div>
+            <div id="add_group_container">
+                <form name=add_group>
+                    <h1 style="text-align: center;">Adicionar Grupo</h1>
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome" name="nome" placeholder="Nome">
+                    <label for="categoria"> Categoria</label>
+                    <input type="text" id="categoria" name="categoria" placeholder="Categoria">
+                    <label for="amigos">Adicionar amigos</label>
+                    <br>
+                    <select name="amigos" id="sel_amigos" multiple>
+
+                    </select>
+                    <p>Clique Ctrl (Windows) ou Command (Mac) para selecionar vários amigos.</p>
+                </form>
+                    <input type="submit" value="Adicionar" onclick="addNewGrupo()">
+                    <input type="submit" value="Cancelar" style="background-color: red;" onclick="close_adicionar_grupo_popup()">
             </div>
         </div>
         <script src="./Script/main.js"></script>
+        <script src="./Script/grupos.js"></script>
     </body>
 </html>
