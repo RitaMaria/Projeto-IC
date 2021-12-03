@@ -53,15 +53,17 @@
                         <btn class="fa fa-send" id="submit" onclick="enviar_msg()"></btn>
                         <btn class="fa fa-paperclip" onclick="open_attach_file_popup()" style="margin-left: 10px;"></btn>
                     </div>
-                    <div id="attach_file_popup">
-                        <h1>Selecionar ficheiro</h1>
-                        <i id ="close_btn" class="fa fa-close" onclick="close_attach_file_popup()"></i>
-                        <i id="file_img" class="fa fa-file-word-o"><p id="file_text">missfortune.docx</p></i>
-                        <i id="file_img" class="fa fa-file-pdf-o" onclick="sendpdf()"> <p id="file_text">apontamentos@13Set2021.pdf</p></i>
-                        <i id="file_img" class="fa fa-file-excel-o"> <p id="file_text">arcane.xlsx</p></i> <br>
-                    </div>
+
                 </div>
             </section>
+                <div id="attach_file_popup">
+                    <h1>Selecionar ficheiro</h1>
+                    <i id="file_img_1" class="fa fa-file-word-o" onclick="sel_fich(this)"><p id="file_text">missfortune.docx</p></i>
+                    <i id="file_img_2" class="fa fa-file-pdf-o" onclick="sel_fich(this)"> <p id="file_text">apontamentos@13Set2021.pdf</p></i>
+                    <i id="file_img_3" class="fa fa-file-excel-o" onclick="sel_fich(this)"> <p id="file_text">arcane.xlsx</p></i> <br>
+                    <input type="submit" value="Enviar" onclick="sendpdf()">
+                    <input type="submit" value="Cancelar" style="background-color: red;" onclick="close_attach_file_popup()">
+                </div>            
         </div>
         <script src="./Script/chat.js"></script>
         <script src="./Script/main.js"></script>

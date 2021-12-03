@@ -17,8 +17,3 @@ function close_rating_popup() {
 function voltar_debates() {
     location.href = "index.html";
 }
-
-function iniciar_chamada_crimes() {
-    location.href = "chamada.html";
-    document.getElementById("nome_grupo").innerHTML = "Crimes"; //nao funciona
-}
