@@ -9,5 +9,4 @@ aceleradores na submissao dos formes
 ordem alfabetica barra lateral esquerda
 indicar pagina selecionada na barra lateral esquerda
 todos os popups: não aparecer botao confirmar sem ter preenchido
-adicionar grupo e contacto no final
 videochamada com participantes coerentes
