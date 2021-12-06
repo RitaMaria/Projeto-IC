@@ -30,6 +30,7 @@ for (var i = 0; i < contactos_nomes.length; i++) {
 
 
 let grupos_nomes = ["Debates-123", "Crimes"];
+grupos_nomes.sort();
 
 if (localStorage.grupos_n != undefined) {
     grupos_nomes = JSON.parse(localStorage.grupos_n);
@@ -44,19 +45,21 @@ function iniciar_chamada(i) {
 }
 
 var listGrupos = function () {
-    document.getElementById("displaygrupos").innerHTML = '<i id="group_img" class="fa fa-plus-circle" onclick="open_adicionar_grupo_popup()"><p id="group_text">Adicionar grupo</p></i>';
     for (var i = 0; i < grupos_nomes.length; i++) {
         document.getElementById("displaygrupos").innerHTML += '<i id="group_img" class="fa fa-group" onclick="iniciar_chamada('+i+')"><p id="group_text">' + grupos_nomes[i] + '</p></i>';
     }
+    document.getElementById("displaygrupos").innerHTML += '<i id="group_img" class="fa fa-plus-circle" onclick="open_adicionar_grupo_popup()"><p id="group_text">Adicionar grupo</p></i>';
 }
 
 var addNewGrupo = function () {
     var nome = document.getElementById('nome').value;
     grupos_nomes.push(nome);
-    document.getElementById("displaygrupos").innerHTML = '<i id="group_img" class="fa fa-plus-circle" onclick="open_adicionar_grupo_popup()"><p id="group_text">Adicionar grupo</p></i>';
+    grupos_nomes.sort();
+    document.getElementById("displaygrupos").innerHTML = "";
     for (var i = 0; i < grupos_nomes.length; i++) {
         document.getElementById("displaygrupos").innerHTML += '<i id="group_img" class="fa fa-group" onclick="iniciar_chamada()"><p id="group_text">' + grupos_nomes[i] + '</p></i>';
     }
+    document.getElementById("displaygrupos").innerHTML += '<i id="group_img" class="fa fa-plus-circle" onclick="open_adicionar_grupo_popup()"><p id="group_text">Adicionar grupo</p></i>';
     document.getElementById("add_group_container").style.display = "none";
     document.add_group.reset();
     localStorage.setItem("grupos_n", JSON.stringify(grupos_nomes));
