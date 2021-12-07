@@ -22,37 +22,9 @@ function close_attach_file_popup() {
 }
 
 function sendpdf() {
-    if(document.getElementById("file_img_1").style.border=="5px solid black") {
-        let p = `<div class="out-msg">
-        <span class="my-msg"><a href="missfortune.docx">missfortune.docx</a></span>
-        <i id="img_user" class="fa fa-user-o"></i>
-        </div>`;
-
-        document.querySelector(".chat-area").insertAdjacentHTML("beforeend", p);
-
-        document.getElementById("attach_file_popup").style.display = "none";
-
-        document.getElementById("file_img_1").style.border = "none";
-        document.getElementById("file_img_2").style.border = "none";
-        document.getElementById("file_img_3").style.border = "none";
-    }
-    else if(document.getElementById("file_img_2").style.border=="5px solid black") {
+    if(document.getElementById("file_img_2").style.border=="5px solid black") {
         let p = `<div class="out-msg">
         <span class="my-msg"><a href="apontamentos@13Set2021.pdf">apontamentos@13Set2021.pdf</a></span>
-        <i id="img_user" class="fa fa-user-o"></i>
-        </div>`;
-
-        document.querySelector(".chat-area").insertAdjacentHTML("beforeend", p);
-
-        document.getElementById("attach_file_popup").style.display = "none";
-
-        document.getElementById("file_img_1").style.border = "none";
-        document.getElementById("file_img_2").style.border = "none";
-        document.getElementById("file_img_3").style.border = "none";
-    }
-    else if(document.getElementById("file_img_3").style.border=="5px solid black") {
-        let p = `<div class="out-msg">
-        <span class="my-msg"><a href="arcane.xlsx">arcane.xlsx</a></span>
         <i id="img_user" class="fa fa-user-o"></i>
         </div>`;
 
@@ -87,3 +59,19 @@ function sel_fich(target) {
         target.style.border = "5px solid black";
     }
 }
+
+document.getElementById("group_name").innerHTML = JSON.parse(localStorage.ativeName);
+
+let participants = JSON.parse(localStorage.ativeParticipants);
+
+function listParticipants () {
+    for (var i=0; i<participants.length; i++) {
+        document.getElementById("participants_list").innerHTML += '<li><i class="fa fa-user"></i> '+participants[i]+'</li>';
+    }
+}
+
+function sair_chat() {
+    location.href="index.html";
+}
+
+window.addEventListener('load', listParticipants());

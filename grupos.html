@@ -11,7 +11,6 @@
     <body>
         <div class="container_g">
             <div class="side_bar_g">
-                <a href="index.html">Debates</a>
                 <a href="grupos.html">Grupos</a>
                 <a href="contactos.html">Contactos</a>
                 <bottom>
@@ -44,6 +43,22 @@
                 </form>
                     <input type="submit" value="Adicionar" onclick="addNewGrupo()">
                     <input type="submit" value="Cancelar" style="background-color: red;" onclick="close_adicionar_grupo_popup()">
+            </div>
+            <div id="group_info">
+                <h1 id="nome_g" style="text-align: center;">Nome grupo</h1>
+                <p id="categoria_g"><b>Categoria:</b> Teste</p>
+                <p id="contactos_g" style="word-wrap: break-word;"><b>Contactos:</b></p>
+                <p><b>Adicionar contacto:</b>
+                    <select name="amigos_g" id="sel_amigos_g" multiple>
+
+                    </select>
+                </p>
+                <p>Clique Ctrl (Windows) ou Command (Mac) para selecionar vários amigos.</p>
+                <a id="add_contact_g">Adicionar Contacto</a> <br>
+                <a id="go_chat">Iniciar Chat <i class="fa fa-comment"></i></a>
+                <a id="go_chamada">Iniciar Videochamada <i class="fa fa-video-camera"></i></a>
+                <a style="background-color: red;" onclick="remover_grupo()">Remover Grupo <i class="fa fa-trash"></i></a>
+                <a style="background-color: red;" onclick="close_group_info()">Cancelar</a>
             </div>
         </div>
         <script src="./Script/main.js"></script>

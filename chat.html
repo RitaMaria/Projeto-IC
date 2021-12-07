@@ -10,7 +10,6 @@
     <body>
         <div class="container_chat">
             <div class="left_bar_chat">
-                <a href="index.html">Debates</a>
                 <a href="grupos.html">Grupos</a>
                 <a href="contactos.html">Contactos</a>
                 <bottom>
@@ -19,7 +18,7 @@
                 </bottom>
             </div>
             <div class="top_bar_chat">
-                <div class="group-name">Debates-123</div>
+                <div id="group_name" class="group-name">Teste</div>
                 <div class="top_btn">
                     <btn class="fa fa-video-camera" onclick="iniciar_chamada()"></btn>
                     <btn class="fa fa-phone"></btn>
@@ -29,14 +28,11 @@
                 <b>Let's talk!</b>
             </div>
             <div class="right_bar_chat">
-                <ul>
+                <ul id="participants_list">
                     <li id="participantestop">Participantes</li>
-                    <li>Participante 1</li>
-                    <li>Participante 2</li>
-                    <li id="participantesbottom">Adicionar amigo <i class="fa fa-plus"></i> </li>
                 </ul>
-                <bottom>
-                    Opções
+                <bottom onclick="sair_chat()">
+                    Sair
                 </bottom>
             </div>
             <section>
