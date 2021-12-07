@@ -169,6 +169,8 @@ var listGrupos = function () {
         document.getElementById("displaygrupos").innerHTML += '<i id="group_img" class="fa fa-group" onclick="open_group_info('+i+')"><p id="group_text">' + grupos_nomes[i] + '</p></i>';
     }
     document.getElementById("displaygrupos").innerHTML += '<i id="group_img" class="fa fa-plus-circle" onclick="open_adicionar_grupo_popup()"><p id="group_text">Adicionar grupo</p></i>';
+    document.getElementById("side_contactos").style.fontWeight="normal";
+    document.getElementById("side_grupos").style.fontWeight="bold";
 }
 
 window.addEventListener('load', listGrupos());

@@ -27,6 +27,8 @@ var listContacts = function () {
         document.getElementById("displayContacts").innerHTML += '<i id="group_img" class="fa fa-user"><p id="group_text">' + contactos_nomes[i] +'</p></i>';
     }
     document.getElementById("displayContacts").innerHTML += '<i id="group_img" class="fa fa-plus-circle" onclick="open_adicionar_contacto_popup()"><p id="group_text">Adicionar contacto</p></i>';
+    document.getElementById("side_contactos").style.fontWeight="bold";
+    document.getElementById("side_grupos").style.fontWeight="normal";
 }
 
 var addNewContact = function () {
