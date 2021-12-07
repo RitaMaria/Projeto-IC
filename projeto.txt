@@ -1,12 +1,7 @@
-pop up quando se clica no grupo, com o nome, categoria, participantes, iniciar chamada, iniciar chat
-nomes dos participantes no chat e na chamada coerentes com o grupo
-ordem alfabetica dos participantes
 perfil
 definições
 formularios com validacao (email e telemovel correto)
-apagar pagina debates?, ninguem a percebe :)
-aceleradores na submissao dos formes
+aceleradores na submissao dos forms
 ordem alfabetica barra lateral esquerda
 indicar pagina selecionada na barra lateral esquerda
 todos os popups: não aparecer botao confirmar sem ter preenchido
-videochamada com participantes coerentes
