@@ -1,5 +1,13 @@
 document.getElementById("nome_grupo").innerHTML = JSON.parse(localStorage.ativeName);
 
+function open_rating_popup() {
+    document.getElementById("rating_popup").style.display = "block";
+}
+
+function close_rating_popup() {
+    document.getElementById("rating_popup").style.display = "none";
+}
+
 //Avaliacao do topico
 for(let i = 0; i < 5; i++){
     document.getElementById('estrela'+String(i)).addEventListener('click', function(){estrela(i);});
@@ -55,6 +63,14 @@ function listParticipants () {
     for (var i=0; i<participants.length;i++) {
         document.getElementById("vc").innerHTML += '<div class="video-participant_c"><div class="participant-actions"><btn class="fa fa-microphone-slash"></btn> <btn class="fa fa-camera"></btn></div><a class="name-tag">'+participants[i]+'</a><img class="img_f" src='+imagens_pessoas[i]+'alt="participant"></div>';
     }
+}
+
+function voltar_debates() {
+    if (document.getElementById('estrela0').className == "fa fa-star" || document.getElementById('estrela_0').className == "fa fa-star") {
+        alert("Deve concluir a avaliação do debate.");
+        return false;
+    }
+    location.href = "index.html";
 }
 
 window.addEventListener('load', listParticipants());

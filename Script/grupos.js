@@ -65,7 +65,15 @@ else {
 
 var addNewGrupo = function () {
     var nome = document.getElementById('nome').value;
+    if (nome =="") {
+        alert("Deve preencher o nome do grupo.");
+        return false;
+    }
     var categoria = document.getElementById("categoria").value;
+    if (categoria =="") {
+        alert("Deve preencher a categoria do grupo.");
+        return false;
+    }
     grupos_nomes.push(nome);
     grupos_nomes.sort();
     for (var j= 0; j < grupos_nomes.length; j++) {
@@ -86,6 +94,10 @@ var addNewGrupo = function () {
         }
     }
     elementos.sort();
+    if (elementos==[]) {
+        alert("Deve adicionar contactos ao grupo.");
+        return false;
+    }
     for (var j= 0; j < grupos_nomes.length; j++) {
         if (grupos_nomes[j] == nome) {
             grupos_elementos.splice(j, 0, elementos);

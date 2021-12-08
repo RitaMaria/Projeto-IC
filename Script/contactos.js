@@ -33,8 +33,20 @@ var listContacts = function () {
 
 var addNewContact = function () {
     var nome = document.getElementById('nome').value;
+    if (nome =="") {
+        alert("Deve preencher o nome do contacto.");
+        return false;
+    }
     var telemovel = document.getElementById("telemovel").value;
+    if (telemovel=="") {
+        alert("Deve preencher o telemóvel do contacto.");
+        return false;
+    }
     var email = document.getElementById("email").value;
+    if (email=="") {
+        alert("Deve preencher o email do contacto.");
+        return false;
+    }
     contactos_nomes.push(nome);
     contactos_nomes.sort();
     contactos_telemovel.push(telemovel);
